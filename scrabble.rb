@@ -26,20 +26,34 @@ class Scrabble
     end
   end
 
+# def self.fewest_letters(array_of_words)
+#   number_of_letters = 0
+#   lowest_number = 0
+#   array_of_words.each do |w|
+#     if w.count <=
+# end
+
   def self.highest_score_from(array_of_words)
     high_score = 0
     highest_word = ""
     array_of_words.each do |w|
-    # { |w| self.score(w) >= high_score }
-      if self.score(w) >= high_score
-        highest_word = w
-        high_score = self.score(w)
-      end
-    end
-      return highest_word
+      # { |w| self.score(w) >= high_score }
+         if self.score(w) >= high_score
+           highest_word = w
+           high_score = self.score(w)
+         end
+       end
+        return highest_word
   end
 
-  def fewest_letters
+  def self.short_word(array_of_words)
+      short_word = array_of_words[0]
+      array_of_words.each do |w|
+        if w.size <= short_word.size
+          short_word = w
+        end
+        return short_word
+      end
 
   end
 
